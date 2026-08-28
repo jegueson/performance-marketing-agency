@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Performance Marketing Agency Hub</title>
+<meta name="description" content="A self-hosted paid media dashboard that pulls Google Ads data into a local database and prepares analysis prompts for AI assistants.">
+<style>
+  :root{--bg:#0f1115;--card:#171a21;--line:#262b36;--fg:#e6e8ee;--mut:#9aa3b2;--acc:#5b8cff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font-family:"Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:64px 24px 96px}
+  header{border-bottom:1px solid var(--line);padding-bottom:32px;margin-bottom:40px}
+  h1{margin:0 0 12px;font-size:32px;letter-spacing:-.02em}
+  h2{margin:40px 0 12px;font-size:20px;letter-spacing:-.01em}
+  p{margin:0 0 16px;color:var(--mut)}
+  .lead{font-size:18px;color:var(--fg)}
+  ul{color:var(--mut);padding-left:20px}
+  li{margin-bottom:8px}
+  a{color:var(--acc);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;margin:24px 0}
+  code{background:#0b0d11;border:1px solid var(--line);border-radius:4px;
+       padding:2px 6px;font-size:13px;color:#c9d1e0}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
+         color:var(--mut);font-size:14px}
+  .tag{display:inline-block;background:#1d2430;border:1px solid var(--line);
+       color:var(--mut);font-size:12px;padding:3px 10px;border-radius:99px;margin-right:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Performance Marketing Agency Hub</h1>
+    <p class="lead">A self-hosted paid media dashboard. It pulls your Google Ads data into a
+    local database and turns it into structured analysis prompts for AI assistants.</p>
+    <span class="tag">Runs locally</span>
+    <span class="tag">Python standard library only</span>
+    <span class="tag">No third-party servers</span>
+  </header>
+
+  <h2>What it does</h2>
+  <p>The application connects to the Google Ads API using your own credentials, stores a daily
+  snapshot of campaign, keyword, search term and conversion data in a local SQLite database, and
+  serves a dashboard from <code>localhost</code> on your own machine.</p>
+
+  <p>Seven specialist paid media agent personas are available. Selecting one assembles a prompt
+  containing that persona plus the relevant slice of your account data, which you copy into an AI
+  assistant of your choice.</p>
+
+  <h2>Design principles</h2>
+  <ul>
+    <li><strong>No installation.</strong> Uses only the Python standard library, so it runs on
+    locked-down corporate machines where package installs are blocked.</li>
+    <li><strong>No data leaves your machine.</strong> There is no backend service, no telemetry
+    and no account. The database and credentials sit in the project folder.</li>
+    <li><strong>Your own API access.</strong> Each user supplies their own Google Cloud OAuth
+    client and Google Ads developer token.</li>
+  </ul>
+
+  <div class="card">
+    <h2 style="margin-top:0">Source code</h2>
+    <p style="margin-bottom:0">The project is open source and available on
+    <a href="https://github.com/jegueson/performance-marketing-agency">GitHub</a>.
+    Setup instructions are in the repository README.</p>
+  </div>
+
+  <h2>Privacy</h2>
+  <p>This application does not collect, transmit or share any user data. Read the full
+  <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a>.</p>
+
+  <footer>
+    <p style="margin:0">Contact: <a href="mailto:gabriel.candido@gmail.com">gabriel.candido@gmail.com</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
