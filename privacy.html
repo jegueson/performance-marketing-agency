@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Performance Marketing Agency Hub</title>
+<meta name="description" content="Privacy policy for the Performance Marketing Agency Hub, a locally hosted Google Ads reporting tool.">
+<style>
+  :root{--bg:#0f1115;--card:#171a21;--line:#262b36;--fg:#e6e8ee;--mut:#9aa3b2;--acc:#5b8cff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font-family:"Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:64px 24px 96px}
+  header{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:32px}
+  h1{margin:0 0 8px;font-size:30px;letter-spacing:-.02em}
+  h2{margin:36px 0 12px;font-size:19px;letter-spacing:-.01em}
+  p{margin:0 0 16px;color:var(--mut)}
+  ul{color:var(--mut);padding-left:20px}
+  li{margin-bottom:8px}
+  a{color:var(--acc);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .meta{color:var(--mut);font-size:14px;margin:0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;margin:24px 0}
+  .card p:last-child{margin-bottom:0}
+  code{background:#0b0d11;border:1px solid var(--line);border-radius:4px;
+       padding:2px 6px;font-size:13px;color:#c9d1e0}
+  footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
+         color:var(--mut);font-size:14px}
+  strong{color:var(--fg)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Performance Marketing Agency Hub &middot; Effective 28 August 2026</p>
+  </header>
+
+  <p>Performance Marketing Agency Hub ("the application") is open-source software that runs
+  entirely on the computer of the person who installs it. This policy explains what the
+  application does with data, and what its developer does not do with it.</p>
+
+  <div class="card">
+    <p><strong>Summary:</strong> the developer of this application never receives your data.
+    There is no server, no hosted service and no account. All data stays on your own machine.</p>
+  </div>
+
+  <h2>1. Who operates this application</h2>
+  <p>The application is distributed as source code. Each user installs and runs their own copy
+  using their own Google Cloud project and their own Google Ads API credentials. The author of
+  the software does not operate any service on your behalf and has no access to your
+  installation.</p>
+
+  <h2>2. What data the application accesses</h2>
+  <p>When you authorise the application, it requests the
+  <code>https://www.googleapis.com/auth/adwords</code> scope. This allows it to read reporting
+  data from the Google Ads accounts you already have access to, including:</p>
+  <ul>
+    <li>Account names, identifiers, currency and time zone settings</li>
+    <li>Campaign, ad group, ad, keyword and search term performance metrics</li>
+    <li>Conversion action configuration and conversion metrics</li>
+  </ul>
+  <p>The application reads reporting data. It does not require or use any personal information
+  about individual end users of your website, and Google Ads does not expose such information
+  through these reports.</p>
+
+  <h2>3. Where data is stored</h2>
+  <p>All retrieved data is written to a SQLite database file inside the application folder on
+  your computer (<code>data/adshub.db</code>). Your OAuth credentials and refresh token are
+  stored in <code>config.json</code> in the same folder.</p>
+  <p>Neither file is transmitted anywhere. The application's only outbound network connections
+  are to <code>oauth2.googleapis.com</code> and <code>googleads.googleapis.com</code>, both
+  operated by Google.</p>
+
+  <h2>4. What the application does not do</h2>
+  <ul>
+    <li>It does not send your data to the developer or any third party.</li>
+    <li>It does not include analytics, telemetry, tracking or crash reporting.</li>
+    <li>It does not sell, rent or share data with anyone.</li>
+    <li>It does not use Google user data to train, develop or improve any machine learning or
+    artificial intelligence model.</li>
+    <li>It does not serve advertising.</li>
+  </ul>
+
+  <h2>5. Prompts and AI assistants</h2>
+  <p>A core feature of the application is generating text prompts that combine an analyst
+  persona with a summary of your advertising performance. These prompts are assembled locally
+  and placed on your clipboard or saved as a file.</p>
+  <p>If you choose to paste a prompt into an external AI assistant, that data becomes subject to
+  the privacy policy of the assistant you use. This action is always initiated by you. The
+  application never sends prompts anywhere automatically.</p>
+
+  <h2>6. Limited Use disclosure</h2>
+  <p>The application's use and transfer of information received from Google APIs adheres to the
+  <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API
+  Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+  <h2>7. Data retention and deletion</h2>
+  <p>Because all data is local, you control retention completely. The application keeps a
+  rolling window of recent data, configurable in <code>config.json</code>, and deletes older
+  records automatically on each sync.</p>
+  <p>To remove everything:</p>
+  <ul>
+    <li>Delete the <code>data</code> folder to remove all cached advertising data.</li>
+    <li>Delete <code>config.json</code> to remove your stored credentials.</li>
+    <li>Revoke the application's access at
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+  </ul>
+
+  <h2>8. Security</h2>
+  <p><code>config.json</code> contains a refresh token that grants access to your Google Ads
+  data. It is excluded from version control and should not be shared or committed to a
+  repository. Protect it as you would a password. Anyone with access to your computer's file
+  system can read it.</p>
+
+  <h2>9. Children</h2>
+  <p>The application is a professional advertising tool and is not directed at, or intended for
+  use by, anyone under the age of 16.</p>
+
+  <h2>10. Changes to this policy</h2>
+  <p>Any changes will be published on this page with a revised effective date. Because the
+  application is versioned in a public repository, the history of this document is publicly
+  auditable.</p>
+
+  <h2>11. Contact</h2>
+  <p>Questions about this policy can be sent to
+  <a href="mailto:gabriel.candido@gmail.com">gabriel.candido@gmail.com</a>.</p>
+
+  <footer>
+    <p style="margin:0"><a href="index.html">Home</a> &middot;
+    <a href="terms.html">Terms of Service</a> &middot;
+    <a href="https://github.com/jegueson/performance-marketing-agency">Source code</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
